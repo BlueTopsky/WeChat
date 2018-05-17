@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qwp-0t-ac6">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Tab Bar Controller-->
+        <scene sceneID="zau-Hi-L0D">
+            <objects>
+                <tabBarController id="qwp-0t-ac6" customClass="MyTabBarController" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sZT-Jn-GoM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="8Pk-Ok-koS" kind="relationship" relationship="viewControllers" id="3U7-i5-c8f"/>
+                        <segue destination="EPb-oM-FDV" kind="relationship" relationship="viewControllers" id="ZHF-7j-G3t"/>
+                        <segue destination="T3l-7R-y58" kind="relationship" relationship="viewControllers" id="9Yh-0Z-hb8"/>
+                        <segue destination="Bj4-r6-HhU" kind="relationship" relationship="viewControllers" id="Ley-8p-Lm2"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xzh-o7-zaf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-902" y="-172"/>
+        </scene>
+        <!--微信-->
+        <scene sceneID="FgG-hF-fEB">
+            <objects>
+                <tableViewController title="微信" id="oLe-G5-urH" customClass="HomeTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="24o-Pb-xOy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="oLe-G5-urH" id="44d-Zo-iqR"/>
+                            <outlet property="delegate" destination="oLe-G5-urH" id="4dD-EN-cma"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="微信" id="BQj-Zi-8oT"/>
+                    <connections>
+                        <segue destination="Z6c-MU-Kgc" kind="show" identifier="PushToDetailMsgVC" id="U31-L8-fc1"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RhJ-i1-0FR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1583" y="-1352"/>
+        </scene>
+        <!--Detail Msg View Controller-->
+        <scene sceneID="5hf-H6-bH4">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="Z6c-MU-Kgc" customClass="DetailMsgViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6oj-wp-Atu"/>
+                        <viewControllerLayoutGuide type="bottom" id="3hj-hD-jNr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VdI-8h-sYr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0tZ-s6-J5o">
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Z6c-MU-Kgc" id="kjJ-S9-Ysj"/>
+                                    <outlet property="delegate" destination="Z6c-MU-Kgc" id="Ivj-5a-RWa"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bM-nY-SyE">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBO-od-3RR">
+                                        <rect key="frame" x="8" y="9" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="0RZ-ng-FSS"/>
+                                            <constraint firstAttribute="width" constant="32" id="FdN-A5-flz"/>
+                                        </constraints>
+                                        <state key="normal" image="chat_voice"/>
+                                        <connections>
+                                            <action selector="clickVoiceBtn:" destination="Z6c-MU-Kgc" eventType="touchUpInside" id="nRz-Sy-d76"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2A2-6P-IQU">
+                                        <rect key="frame" x="335" y="9" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="EpD-LQ-ef1"/>
+                                            <constraint firstAttribute="height" constant="32" id="aVP-Sk-zeP"/>
+                                        </constraints>
+                                        <state key="normal" image="chat_add"/>
+                                        <connections>
+                                            <action selector="clickAddBtn:" destination="Z6c-MU-Kgc" eventType="touchUpInside" id="YQn-5D-xAw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ewm-LD-yZq">
+                                        <rect key="frame" x="303" y="13" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="ApF-Ed-Rb2"/>
+                                            <constraint firstAttribute="width" constant="24" id="GzG-xJ-fZC"/>
+                                        </constraints>
+                                        <state key="normal" image="chat_emotion"/>
+                                        <connections>
+                                            <action selector="clickEmotionBtn:" destination="Z6c-MU-Kgc" eventType="touchUpInside" id="s4B-FA-vXq"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hA-Y2-c3E">
+                                        <rect key="frame" x="48" y="7" width="247" height="36"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="1hA-Y2-c3E" firstAttribute="top" secondItem="1bM-nY-SyE" secondAttribute="top" constant="7" id="1PW-ll-VUE"/>
+                                    <constraint firstItem="2A2-6P-IQU" firstAttribute="leading" secondItem="Ewm-LD-yZq" secondAttribute="trailing" constant="8" id="2ld-Ri-48I"/>
+                                    <constraint firstAttribute="bottom" secondItem="1hA-Y2-c3E" secondAttribute="bottom" constant="7" id="AzK-h1-Zbe"/>
+                                    <constraint firstItem="Ewm-LD-yZq" firstAttribute="leading" secondItem="1hA-Y2-c3E" secondAttribute="trailing" constant="8" id="B75-uA-5Gk"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ewm-LD-yZq" secondAttribute="bottom" constant="13" id="FT8-M6-xQd"/>
+                                    <constraint firstAttribute="bottom" secondItem="2A2-6P-IQU" secondAttribute="bottom" constant="9" id="G6D-3T-kxb"/>
+                                    <constraint firstItem="1hA-Y2-c3E" firstAttribute="leading" secondItem="BBO-od-3RR" secondAttribute="trailing" constant="8" id="Nrm-bq-bKN"/>
+                                    <constraint firstAttribute="trailing" secondItem="2A2-6P-IQU" secondAttribute="trailing" constant="8" id="W9j-eo-Iw0"/>
+                                    <constraint firstAttribute="bottom" secondItem="BBO-od-3RR" secondAttribute="bottom" constant="9" id="Z73-9n-XDj"/>
+                                    <constraint firstItem="BBO-od-3RR" firstAttribute="leading" secondItem="1bM-nY-SyE" secondAttribute="leading" constant="8" id="eh5-cq-u3x"/>
+                                    <constraint firstAttribute="height" constant="50" id="oco-0c-b9M"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1bM-nY-SyE" secondAttribute="trailing" id="2IM-Pn-T2E"/>
+                            <constraint firstItem="1bM-nY-SyE" firstAttribute="leading" secondItem="VdI-8h-sYr" secondAttribute="leading" id="4nN-Mn-FWK"/>
+                            <constraint firstItem="1bM-nY-SyE" firstAttribute="top" secondItem="0tZ-s6-J5o" secondAttribute="bottom" id="JUd-BV-76s"/>
+                            <constraint firstAttribute="bottom" secondItem="1bM-nY-SyE" secondAttribute="bottom" id="Qv0-zr-fdT"/>
+                            <constraint firstAttribute="trailing" secondItem="0tZ-s6-J5o" secondAttribute="trailing" id="dFa-9K-Dbo"/>
+                            <constraint firstItem="0tZ-s6-J5o" firstAttribute="top" secondItem="6oj-wp-Atu" secondAttribute="bottom" id="dck-fO-VBv"/>
+                            <constraint firstItem="0tZ-s6-J5o" firstAttribute="leading" secondItem="VdI-8h-sYr" secondAttribute="leading" id="rc6-JF-Tyl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="kInputView" destination="1bM-nY-SyE" id="vNY-3V-18s"/>
+                        <outlet property="kInputViewBottom" destination="Qv0-zr-fdT" id="eat-VK-3W7"/>
+                        <outlet property="kInputViewHeight" destination="oco-0c-b9M" id="ryG-7N-2VY"/>
+                        <outlet property="kTableView" destination="0tZ-s6-J5o" id="lhJ-Ub-ChH"/>
+                        <outlet property="kTextView" destination="1hA-Y2-c3E" id="jqO-IN-FoU"/>
+                        <outlet property="kTextViewBottom" destination="AzK-h1-Zbe" id="lSd-gC-RjC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Smr-BP-Xxg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2600.8000000000002" y="-1352.473763118441"/>
+        </scene>
+        <!--通讯录-->
+        <scene sceneID="RGR-sA-Qif">
+            <objects>
+                <tableViewController title="通讯录" id="n8e-jt-aow" customClass="ContactTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="fOQ-56-rze">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="n8e-jt-aow" id="MXr-2Z-RAm"/>
+                            <outlet property="delegate" destination="n8e-jt-aow" id="HuV-ji-V2b"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="通讯录" id="6KT-oE-3KD"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fBe-ZF-Ts1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1582" y="-602"/>
+        </scene>
+        <!--Search Table View Controller-->
+        <scene sceneID="eQT-uT-iOn">
+            <objects>
+                <tableViewController storyboardIdentifier="SearchResultVC" id="3PC-uL-D1e" customClass="SearchTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rdr-hq-Kcn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="3PC-uL-D1e" id="nn5-VJ-kan"/>
+                            <outlet property="delegate" destination="3PC-uL-D1e" id="Jd7-Fc-cEZ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Phy-Oq-WlP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2519" y="-602"/>
+        </scene>
+        <!--发现-->
+        <scene sceneID="AV1-hV-uUa">
+            <objects>
+                <tableViewController title="发现" id="siD-5Z-z8y" customClass="FindTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="stI-nu-pMj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="siD-5Z-z8y" id="nub-OK-DeQ"/>
+                            <outlet property="delegate" destination="siD-5Z-z8y" id="Ahh-KY-Wps"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="发现" id="S1N-un-674"/>
+                    <connections>
+                        <segue destination="Uok-xO-fHy" kind="show" identifier="PushToFriendCircleVC" id="PJE-2p-amT"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-cg-Rnk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1582" y="298"/>
+        </scene>
+        <!--朋友圈-->
+        <scene sceneID="qYl-U2-XtV">
+            <objects>
+                <tableViewController title="朋友圈" hidesBottomBarWhenPushed="YES" id="Uok-xO-fHy" customClass="FriendCircleTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="fkY-s7-gQT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Uok-xO-fHy" id="F1a-EQ-vae"/>
+                            <outlet property="delegate" destination="Uok-xO-fHy" id="joO-rz-V2x"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aji-0T-P3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2340" y="296"/>
+        </scene>
+        <!--发现 导航-->
+        <scene sceneID="zbS-Cg-wIa">
+            <objects>
+                <navigationController title="发现 导航" id="T3l-7R-y58" customClass="BaseNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="发现" image="tabbar_discover" selectedImage="tabbar_discoverHL" id="zRs-eF-wGQ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JbO-II-W0a">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="siD-5Z-z8y" kind="relationship" relationship="rootViewController" id="yRQ-6K-wSI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vVP-lR-utC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="540" y="298"/>
+        </scene>
+        <!--我-->
+        <scene sceneID="w2s-bQ-NyT">
+            <objects>
+                <tableViewController title="我" id="b1n-Fi-hFU" customClass="MeTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="WlL-pC-Cz5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="b1n-Fi-hFU" id="ic1-FT-Ade"/>
+                            <outlet property="delegate" destination="b1n-Fi-hFU" id="vgU-nc-TaU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="我" id="Ozk-8O-jYp"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ph-cf-svf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1582" y="1070"/>
+        </scene>
+        <!--我 导航-->
+        <scene sceneID="t9T-h8-lfL">
+            <objects>
+                <navigationController title="我 导航" id="Bj4-r6-HhU" customClass="BaseNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="我" image="tabbar_me" selectedImage="tabbar_meHL" id="2jE-Yb-PiW"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5RG-mS-6yd">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="b1n-Fi-hFU" kind="relationship" relationship="rootViewController" id="iVj-CN-6vU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cF1-WA-D6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="540" y="1070"/>
+        </scene>
+        <!--通讯录 导航-->
+        <scene sceneID="qrH-tt-ta9">
+            <objects>
+                <navigationController title="通讯录 导航" id="EPb-oM-FDV" customClass="BaseNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="通讯录" image="tabbar_contacts" selectedImage="tabbar_contactsHL" id="9Zh-O3-RE7"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eOI-xg-iUc">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="n8e-jt-aow" kind="relationship" relationship="rootViewController" id="cA0-JL-z04"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HJM-SE-jtF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="540" y="-602"/>
+        </scene>
+        <!--微信 导航-->
+        <scene sceneID="NQa-qg-QNS">
+            <objects>
+                <navigationController title="微信 导航" id="8Pk-Ok-koS" customClass="BaseNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="微信" image="tabbar_mainframe" selectedImage="tabbar_mainframeHL" id="2WO-fy-Myj"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uZ1-dy-Mxm">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oLe-G5-urH" kind="relationship" relationship="rootViewController" id="AUC-E4-bLW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Fk-bw-i1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="540" y="-1352"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chat_add" width="28" height="28"/>
+        <image name="chat_emotion" width="28" height="28"/>
+        <image name="chat_voice" width="28" height="28"/>
+        <image name="tabbar_contacts" width="27" height="23"/>
+        <image name="tabbar_contactsHL" width="27" height="23"/>
+        <image name="tabbar_discover" width="23" height="23"/>
+        <image name="tabbar_discoverHL" width="23" height="23"/>
+        <image name="tabbar_mainframe" width="25" height="23"/>
+        <image name="tabbar_mainframeHL" width="25" height="23"/>
+        <image name="tabbar_me" width="23" height="23"/>
+        <image name="tabbar_meHL" width="23" height="23"/>
+    </resources>
+</document>
